@@ -62,3 +62,57 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## instructions 
+git clone https://github.com/desarrolladormadrid/landlords.git
+cd to folder
+composer install
+npm install
+Create database 
+Create .env file , you can rename .env. example to .env
+generate key
+php artisan key:generate
+run migrations
+php artisan migrate
+run seeder
+php artisan db:seed
+
+you can view database schema in the file landlord.png in root directory
+
+## For testing
+
+users:
+luis@luis.com    pass:12345678      (role:landlord)
+ata@ata.com      pass:12345678      (role:administrator)
+pal@pal.com      pass:12345678      (role:user)
+
+all aplication is functionally
+
+## api routes to test
+
+all apartaments
+http://127.0.0.1:8000/api
+
+one apartament (/api/apartament/<id-apartament>)
+http://127.0.0.1:8000/api/apartament/1
+
+available apartaments
+http://127.0.0.1:8000/api/available
+
+filter apartament by feature(air, elevator, heating)
+with air example
+http://127.0.0.1:8000/api/apartaments/filter?air=1
+with elevator
+http://127.0.0.1:8000/api/apartaments/filter?elevator=2
+with heating
+http://127.0.0.1:8000/api/apartaments/filter?heating=3
+
+with concatenated filters
+http://127.0.0.1:8000/api/apartaments/filter?air=1&elevator=2&heating=3
+
+
+
+
+
+
+
